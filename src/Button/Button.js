@@ -1,18 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
-const Controls = () => {
+const Button = ({ path, text }) => {
   return (
-    <div>
-
-    </div>
+    <a
+      href={path}>
+      {text}
+    </a>
   );
 };
 
-Controls.propTypes = {
+{/* Button.propTypes = {
   compareInfo: PropTypes.objectOf(PropTypes.object),
   removeCompare: PropTypes.func
-};
+}; */}
 
-export default Controls;
+export default Button;

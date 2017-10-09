@@ -9,6 +9,9 @@ const Routes = (props) => {
       <div>
         <Route path="/" component={App} />
         <Route path="/people" component={CardContainer} />
+        <Route path="/planets" component={CardContainer} />
+        <Route path="/vehicle" component={CardContainer} />
+        <Route path="/favorites" component={CardContainer} />
       </div>
     </Router>
   );
