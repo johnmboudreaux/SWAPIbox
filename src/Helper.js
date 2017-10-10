@@ -4,8 +4,9 @@ export default class Helper {
   }
 
   getData(path) {
-    return fetch(`http://swapi.co/api/${path}`, {method: "get"})
-      .then(returnedData => returnedData.json());
+    return fetch(`https://swapi.co/api/${path}`, {method: "get"})
+      // .then(returnedData => returnedData.json())
+      .then(data => console.log(data))
   }
 
 }
