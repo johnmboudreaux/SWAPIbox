@@ -3,9 +3,17 @@ import Header from '../Header/Header';
 import Helper from '../Helper';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state= {
+      people: {}
+    };
+  }
   componentDidMount() {
-    const thing = new Helper();
-    console.log(thing.getData());
+    const helper = new Helper();
+    this.setState({
+      people: helper.getData('people')
+    });
   }
 
   render() {
