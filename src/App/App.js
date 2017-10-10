@@ -9,11 +9,23 @@ class App extends Component {
       people: {}
     };
   }
+
+  fetchPeople() {
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
+    const targetUrl = 'http://swapi.co/api/people'
+
+    return fetch(`https://swapi.co/api/people/`)
+      .then(returnedData => returnedData.json())
+      .then(data => console.log(data.results))
+  }
+
   componentDidMount() {
-    const helper = new Helper();
-    this.setState({
-      people: helper.getData('people')
-    });
+    // const helper = new Helper();
+    // helper.getData('people')
+    this.fetchPeople()
+    // this.setState({
+    //   people: helper.getData('people')
+    // });
   }
 
   render() {
