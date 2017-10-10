@@ -1,3 +1,8 @@
+@import "App/App.css";
+@import "CardContainer/CardContainer.css";
+@import "Card/Card.css";
+@import "Header/Header.css";
+
 body {
   margin: 0;
   padding: 0;
