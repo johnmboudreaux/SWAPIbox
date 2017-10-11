@@ -11,25 +11,23 @@ class App extends Component {
     };
   }
 
-  cleanvehiclesData(arrayOfVehicles) {
-    const rawArray = arrayOfVehicles;
-    console.log(rawArray)
-    const cleanArray = rawArray.map(({ name, model, passengers, vehicle_class }) => {
+  cleanVehiclesData(arrayOfVehicles) {
+    const rawArray = arrayOfVehicles.results;
+    const cleanArray = rawArray.map(vehicle => {
       const newVehicle = {
-        name,
-        model,
-        vehicle_class,
-        passengers
+        name: vehicle.name,
+        model: vehicle.model,
+        vehicle_class: vehicle.vehicle_class,
+        passengers: vehicle.passengers
       };
       return newVehicle;
     });
-    console.log(cleanArray)
+    return cleanArray;
   }
 
-  cleanpeopleData(arrayOfPeople) {
-    const rawArray = arrayOfPeople;
-    console.log(rawArray)
-    const cleanArray = rawArray.map((person) => {
+  cleanPeopleData(arrayOfPeople) {
+    const rawArray = arrayOfPeople.results;
+    const cleanArray = rawArray.map(person => {
       const newPerson = {
         name: person.name,
         homeworld: person.homeworld,
@@ -41,8 +39,8 @@ class App extends Component {
     return cleanArray;
   }
 
-  cleanplanetData(arrayOfPlanets) {
-    const rawArray = arrayOfPlanets;
+  cleanPlanetsData(arrayOfPlanets) {
+    const rawArray = arrayOfPlanets.results;
     const cleanArray = rawArray.map((planet) => {
       const newPlanet = {
         name: planet.name,
@@ -59,13 +57,25 @@ class App extends Component {
   fetchList(type) {
     return fetch(`https://swapi.co/api/${type}/`)
       .then(returnedData => returnedData.json())
-      .then(group => this.cleanplanetData(group.results))
-      .then(returnedData => returnedData.map(personPlaceOrThing => {
+      .then(group => {
+        let newGroup = [];
+        if (type === 'people') {
+          newGroup = this.cleanPeopleData(group);
+        }
+        if (type === 'planets') {
+          newGroup = this.cleanPlanetsData(group);
+        }
+        if (type === 'vehicles') {
+          newGroup = this.cleanVehiclesData(group);
+        }
+        return newGroup;
+      })
+      .then(returnData => returnData.map(personPlaceOrThing => {
         if (type === 'people'){
           fetch(personPlaceOrThing.homeworld)
             .then(response => response.json())
             .then(world => personPlaceOrThing.homeworld = world)
-            .then(world => personPlaceOrThing.population = world.population)
+            .then(world => personPlaceOrThing.population = world.population);
         }
         if (type === 'planets') {
           const allResidents = personPlaceOrThing.residents.map(residentAPI => {
@@ -75,17 +85,15 @@ class App extends Component {
           Promise.all(allResidents)
             .then(residents => personPlaceOrThing.residents = residents);
         }
-        console.log('thing: ', personPlaceOrThing)
         return personPlaceOrThing;
-      }))
-      .then(data => console.log(data));
+      }));
   }
 
   componentDidMount() {
     // const helper = new Helper();
     // helper.getData('people')
-    // this.fetchList('vehicles');
-    this.fetchList('planets');
+    this.fetchList('vehicles');
+    // this.fetchList('planets');
     // this.fetchList('people');
     // this.fetchList('planets')
 
