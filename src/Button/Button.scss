@@ -1,0 +1,15 @@
+@import "../variables.scss";
+
+.button {
+  @include radial-gradient($light-grey, $dark-grey);
+  padding: 1em 3em;
+  margin: 1em;
+  border: 1px solid $highlight-dark;
+  box-shadow: $shadow;
+  color: $background;
+  &:hover {
+    color: $highlight-dark;
+    cursor: pointer;
+    box-shadow: none;
+  }
+}

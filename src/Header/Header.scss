@@ -9,10 +9,10 @@
   img {
     display: block;
     width: 50vw;
-    padding: 3em;
+    padding: 5em;
   }
   nav {
-    padding: 2em;
+    padding-bottom: 2em;
     font-weight: 300;
     a {
       text-decoration: none;
@@ -25,6 +25,7 @@
     }
     .active {
       font-weight: 900;
+      color: $highlight-dark;
     }
   }
 

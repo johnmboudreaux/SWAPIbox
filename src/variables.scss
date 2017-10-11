@@ -3,20 +3,15 @@ $light-grey: #211E27;
 
 $body-dark: #444755;
 $body-light: #6D6D74;
+$body-light2: #98989f;
 
 $highlight-dark: #C43B41;
 $background: #C8C7C5;
 
-$select-color: #70879B;
-$select-color-dark: #526B7F;
-$select-color-bright: #349BF5;
-$select-color-bright-shadow: #187cd2;
-
 $highlight: #F3A746;
 
-
 $shadow: 5px 5px 25px $body-dark;
-$glow: 0 0 15px $select-color-bright;
+$glow: 0 0 15px $highlight-dark;
 
 @mixin radial-gradient($color2, $color1) {
   background: $color1;

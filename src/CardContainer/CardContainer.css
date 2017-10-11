@@ -1,0 +1,8 @@
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; }
+  .cardContainer .prev-next {
+    display: flex;
+    justify-content: center;
+    width: 100%; }

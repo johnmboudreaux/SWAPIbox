@@ -1,0 +1,46 @@
+.card {
+  overflow: hidden;
+  border-radius: 1em;
+  margin: .5em;
+  padding: 0;
+  border: 1px solid #172633;
+  background: #98989f;
+  background: -moz-linear-gradient(top, #98989f 0%, #6D6D74 100%);
+  background: -webkit-linear-gradient(top, #98989f 0%, #6D6D74 100%);
+  background: linear-gradient(to bottom, #98989f 0%, #6D6D74 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=0 );
+  box-shadow: 5px 5px 25px #444755; }
+  .card h2 {
+    background: #211E27;
+    background: -moz-linear-gradient(top, #211E27 0%, #172633 100%);
+    background: -webkit-linear-gradient(top, #211E27 0%, #172633 100%);
+    background: linear-gradient(to bottom, #211E27 0%, #172633 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=0 );
+    border-bottom: 3px solid #C43B41;
+    margin: 0;
+    padding: .5em;
+    color: #C8C7C5; }
+  .card table {
+    margin: 1em; }
+  .card td {
+    padding: .5em;
+    font-size: 1.2em;
+    font-weight: 900;
+    text-align: right; }
+  .card .section {
+    font-weight: 300;
+    text-align: left; }
+  .card h5 {
+    background: #211E27;
+    background: -moz-linear-gradient(top, #211E27 0%, #172633 100%);
+    background: -webkit-linear-gradient(top, #211E27 0%, #172633 100%);
+    background: linear-gradient(to bottom, #211E27 0%, #172633 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=0 );
+    border-top: 1px solid #C43B41;
+    margin: 0;
+    padding: 1em;
+    color: #98989f;
+    text-align: right; }
+    .card h5:hover {
+      color: #C43B41;
+      cursor: pointer; }

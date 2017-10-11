@@ -1,11 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Card from '../Card/Card';
+import Button from '../Button/Button';
 
 
 const CardContainer = () => {
   return (
-    <div>
-      <h1>Hi</h1>
+    <div className='cardContainer'>
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <div className='prev-next'>
+        <Button label='Prev' />
+        <Button label='Next' />
+      </div>
     </div>
   );
 };

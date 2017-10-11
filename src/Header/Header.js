@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '../Button/Button';
+import { NavLink } from 'react-router-dom';
 import logo from '../assets/logo.svg'
 
 const Header = () => {
@@ -8,10 +8,10 @@ const Header = () => {
     <div className='header'>
       <a href="/"><img src={logo} alt='logo' /></a>
       <nav>
-        <Button path='/people' text='People' />
-        <Button path='/planets' text='Planets' />
-        <Button path='/vehicles' text='Vehicles' />
-        <Button path='/favorites' text='Favorites' />
+        <NavLink to='/people' activeClassName="active">People</NavLink>
+        <NavLink to='/planets' activeClassName="active">Planets</NavLink>
+        <NavLink to='/vehicles' activeClassName="active">Vehicles</NavLink>
+        <NavLink to='/favorites' activeClassName="active">Favorites <i>(none)</i></NavLink>
       </nav>
     </div>
   );

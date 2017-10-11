@@ -1,0 +1,15 @@
+.button {
+  background: #172633;
+  background: -moz-radial-gradient(center, ellipse cover, #172633 18%, #211E27 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, #172633 18%, #211E27 100%);
+  background: radial-gradient(ellipse at center, #172633 18%, #211E27 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 );
+  padding: 1em 3em;
+  margin: 1em;
+  border: 1px solid #C43B41;
+  box-shadow: 5px 5px 25px #444755;
+  color: #C8C7C5; }
+  .button:hover {
+    color: #C43B41;
+    cursor: pointer;
+    box-shadow: none; }

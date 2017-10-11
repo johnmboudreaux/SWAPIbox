@@ -1,1 +1,12 @@
 @import "../variables.scss";
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .prev-next {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}

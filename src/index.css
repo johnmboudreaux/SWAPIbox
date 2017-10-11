@@ -2,7 +2,8 @@
 @import "CardContainer/CardContainer.css";
 @import "Card/Card.css";
 @import "Header/Header.css";
-
+@import "Button/Button.css";
+@import "Welcome/Welcome.css";
 body {
   margin: 0;
   padding: 0;
