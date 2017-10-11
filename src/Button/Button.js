@@ -7,9 +7,8 @@ const Button = ( { label } ) => {
   );
 };
 
-{/* Button.propTypes = {
-  compareInfo: PropTypes.objectOf(PropTypes.object),
-  removeCompare: PropTypes.func
-}; */}
+Button.propTypes = {
+  label: PropTypes.string.isRequired
+};
 
 export default Button;

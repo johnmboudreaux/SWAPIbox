@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
 import CardContainer from '../CardContainer/CardContainer';
-import Helper from '../Helper';
+// import Helper from '../Helper';
 import { Route } from 'react-router';
 
 class App extends Component {
@@ -110,9 +110,9 @@ class App extends Component {
   componentDidMount() {
     // const helper = new Helper();
     // helper.getData('people')
-    const vehicles = this.fetchList('vehicles');
-    const planets = this.fetchList('planets');
-    const people = this.fetchList('people');
+    this.fetchList('vehicles');
+    this.fetchList('planets');
+    this.fetchList('people');
     // this.fetchList('planets')
 
     // this.fetchPeople();
