@@ -16,68 +16,63 @@ class App extends Component {
     console.log(rawArray)
     const cleanArray = rawArray.map(({ name, model, passengers, vehicle_class }) => {
       const newVehicle = {
-         name,
-         model,
-         vehicle_class,
-         passengers
-      }
+        name,
+        model,
+        vehicle_class,
+        passengers
+      };
       return newVehicle;
-    })
+    });
     console.log(cleanArray)
+  }
+
+  cleanPersonData(arrayOfPeople) {
+    const rawArray = arrayOfPeople;
+    console.log(rawArray)
+    const cleanArray = rawArray.map((person) => {
+      const newPerson = {
+        name: person.name,
+        homeworld: person.homeworld,
+        species: '',
+        population: 0
+      };
+      return newPerson;
+    });
+    return cleanArray;
   }
 
   fetchList(type) {
     return fetch(`https://swapi.co/api/${type}/`)
       .then(returnedData => returnedData.json())
-      .then(returnedData => returnedData.results.map(personPlaceOrThing => {
-        if(type === 'people'){
+      .then(people => this.cleanPersonData(people.results))
+      .then(returnedData => returnedData.map(personPlaceOrThing => {
+        if (type === 'people'){
           fetch(personPlaceOrThing.homeworld)
             .then(response => response.json())
-            .then(homeWorld => personPlaceOrThing.homeworld = homeWorld);
+            .then(world => personPlaceOrThing.homeworld = world)
+            .then(world => personPlaceOrThing.population = world.population)
         }
         if (type === 'planets') {
           const allResidents = personPlaceOrThing.residents.map(residentAPI => {
             return fetch(residentAPI)
               .then(response => response.json());
           });
-          
           Promise.all(allResidents)
             .then(residents => personPlaceOrThing.residents = residents);
         }
+        console.log('thing: ',personPlaceOrThing)
         return personPlaceOrThing;
       }))
       .then(data => console.log(data));
   }
 
-  fetchPeople() {
-    return fetch(`https://swapi.co/api/people/`)
-      .then(returnedData => returnedData.json())
-      .then(people => people.results.map(person => {
-        fetch(person.homeworld)
-          .then(response => response.json())
-          .then(homeWorld => person.homeworld = homeWorld);
-        return person;
-      }))
-      // .then(data => console.log(data));
-  }
-
-  fetchVehicles() {
-    return fetch(`https://swapi.co/api/vehicles/`)
-      .then(returnedData => returnedData.json())
-      .then(vehicles => vehicles.results.map(vehicle => {
-        return vehicle;
-      }))
-      .then(response => this.cleanVehicleData(response))
-      .then()
-      // .then(vehicles => vehicles.map((vehicle) => {
-      //   return Object.assign({}, vehicle);
-      // }));
-  }
-
   componentDidMount() {
     // const helper = new Helper();
     // helper.getData('people')
-    this.fetchList('planets');
+    // this.fetchList('vehicles');
+    this.fetchList('people');
+    // this.fetchList('planets')
+
     // this.fetchPeople();
     // this.fetchVehicles();
     // this.setState({
