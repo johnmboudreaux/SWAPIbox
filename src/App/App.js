@@ -11,7 +11,7 @@ class App extends Component {
     };
   }
 
-  cleanVehicleData(arrayOfVehicles) {
+  cleanvehiclesData(arrayOfVehicles) {
     const rawArray = arrayOfVehicles;
     console.log(rawArray)
     const cleanArray = rawArray.map(({ name, model, passengers, vehicle_class }) => {
@@ -26,7 +26,7 @@ class App extends Component {
     console.log(cleanArray)
   }
 
-  cleanPersonData(arrayOfPeople) {
+  cleanpeopleData(arrayOfPeople) {
     const rawArray = arrayOfPeople;
     console.log(rawArray)
     const cleanArray = rawArray.map((person) => {
@@ -41,10 +41,25 @@ class App extends Component {
     return cleanArray;
   }
 
+  cleanplanetData(arrayOfPlanets) {
+    const rawArray = arrayOfPlanets;
+    const cleanArray = rawArray.map((planet) => {
+      const newPlanet = {
+        name: planet.name,
+        terrain: planet.terrain,
+        poplulation: planet.population,
+        climate: planet.climate,
+        residents: planet.residents
+      };
+      return newPlanet;
+    });
+    return cleanArray;
+  }
+
   fetchList(type) {
     return fetch(`https://swapi.co/api/${type}/`)
       .then(returnedData => returnedData.json())
-      .then(people => this.cleanPersonData(people.results))
+      .then(group => this.cleanplanetData(group.results))
       .then(returnedData => returnedData.map(personPlaceOrThing => {
         if (type === 'people'){
           fetch(personPlaceOrThing.homeworld)
@@ -60,7 +75,7 @@ class App extends Component {
           Promise.all(allResidents)
             .then(residents => personPlaceOrThing.residents = residents);
         }
-        console.log('thing: ',personPlaceOrThing)
+        console.log('thing: ', personPlaceOrThing)
         return personPlaceOrThing;
       }))
       .then(data => console.log(data));
@@ -70,7 +85,8 @@ class App extends Component {
     // const helper = new Helper();
     // helper.getData('people')
     // this.fetchList('vehicles');
-    this.fetchList('people');
+    this.fetchList('planets');
+    // this.fetchList('people');
     // this.fetchList('planets')
 
     // this.fetchPeople();
