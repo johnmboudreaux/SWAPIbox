@@ -17,9 +17,9 @@ class App extends Component {
     const cleanArray = rawArray.map(vehicle => {
       const newVehicle = {
         name: vehicle.name,
-        model: vehicle.model,
-        vehicle_class: vehicle.vehicle_class,
-        passengers: vehicle.passengers,
+        'Model': vehicle.model,
+        'Vehicle Class': vehicle.vehicle_class,
+        'Passengers': vehicle.passengers,
         isFavorite: false,
         type: 'vehicles'
       };
@@ -33,9 +33,9 @@ class App extends Component {
     const cleanArray = rawArray.map(person => {
       const newPerson = {
         name: person.name,
-        homeworld: person.homeworld,
-        species: person.species[0],
-        population: 0,
+        'Homeworld': person.homeworld,
+        'Species': person.species[0],
+        'Population': 0,
         isFavorite: false,
         type: 'people'
       };
@@ -49,10 +49,10 @@ class App extends Component {
     const cleanArray = rawArray.map((planet) => {
       const newPlanet = {
         name: planet.name,
-        terrain: planet.terrain,
-        poplulation: planet.population,
-        climate: planet.climate,
-        residents: planet.residents,
+        'Terrain': planet.terrain,
+        'Poplulation': planet.population,
+        'Climate': planet.climate,
+        'Residents': planet.residents,
         isFavorite: false,
         type: 'planets'
       };
@@ -63,11 +63,8 @@ class App extends Component {
 
   updateState(array) {
     const oldState = this.state.appArray.slice();
-    const newState = [...oldState, ...array]
-    console.log('oldState: ', oldState)
-    console.log('array: ', array)
-    console.log('newState: ', newState)
-    this.setState({ appArray: newState})
+    const newState = [...oldState, ...array];
+    this.setState({ appArray: newState});
   }
 
   fetchList(type) {
