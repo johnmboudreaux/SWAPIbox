@@ -4,19 +4,13 @@ import Card from '../Card/Card';
 import Button from '../Button/Button';
 
 
-const CardContainer = () => {
+const CardContainer = ( { cardData } ) => {
+  const allCards = cardData.map( (cardDataObj, index) => {
+    return <Card key={index} cardData={cardDataObj} />
+  })
   return (
     <div className='cardContainer'>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {allCards}
       <div className='prev-next'>
         <Button label='Prev' />
         <Button label='Next' />
@@ -26,8 +20,7 @@ const CardContainer = () => {
 };
 
 CardContainer.propTypes = {
-  compareInfo: PropTypes.objectOf(PropTypes.object),
-  removeCompare: PropTypes.func
+  cardData: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default CardContainer;
