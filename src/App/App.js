@@ -34,7 +34,7 @@ class App extends Component {
       const newPerson = {
         name: person.name,
         homeworld: person.homeworld,
-        species: '',
+        species: person.species[0],
         population: 0,
         isFavorite: false,
         type: 'people'
@@ -90,8 +90,19 @@ class App extends Component {
         if (type === 'people'){
           fetch(personPlaceOrThing.homeworld)
             .then(response => response.json())
-            .then(world => personPlaceOrThing.homeworld = world)
-            .then(world => personPlaceOrThing.population = world.population);
+            .then(world => {
+              personPlaceOrThing.homeworld = world.name;
+              personPlaceOrThing.population = world.population;
+              return personPlaceOrThing;
+            })
+            .then(personPlaceOrThing => {
+              fetch(personPlaceOrThing.species)
+                .then(response => response.json())
+                .then(species => {
+                  personPlaceOrThing.species = species.name;
+                  return personPlaceOrThing;
+                });
+            });
         }
         if (type === 'planets') {
           const allResidents = personPlaceOrThing.residents.map(residentAPI => {
@@ -99,12 +110,10 @@ class App extends Component {
               .then(response => response.json());
           });
           Promise.all(allResidents)
-            .then(residents => personPlaceOrThing.residents = residents)            
+            .then(residents => personPlaceOrThing.residents = residents);
         }
         return personPlaceOrThing;
       })).then(finalData => this.updateState(finalData));
-      
-      
   }
 
   componentDidMount() {
