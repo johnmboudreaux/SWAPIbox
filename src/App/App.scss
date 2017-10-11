@@ -1,4 +1,8 @@
+@import "https://fonts.googleapis.com/css?family=Work+Sans:300,400,900";
 @import "../variables.scss";
+
 body {
-  background-color: white;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1em;
+  background: $background;
 }

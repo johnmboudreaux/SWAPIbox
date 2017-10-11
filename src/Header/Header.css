@@ -1,0 +1,26 @@
+.header {
+  background: #211E27;
+  background: -moz-linear-gradient(top, #211E27 0%, #172633 100%);
+  background: -webkit-linear-gradient(top, #211E27 0%, #172633 100%);
+  background: linear-gradient(to bottom, #211E27 0%, #172633 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=0 );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 2px solid #C43B41; }
+  .header img {
+    display: block;
+    width: 50vw;
+    padding: 3em; }
+  .header nav {
+    padding: 2em;
+    font-weight: 300; }
+    .header nav a {
+      text-decoration: none;
+      color: #6D6D74;
+      padding: .5em;
+      margin: .5em; }
+      .header nav a:hover {
+        color: #C43B41; }
+    .header nav .active {
+      font-weight: 900; }
