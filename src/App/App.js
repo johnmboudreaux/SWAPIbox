@@ -107,7 +107,10 @@ class App extends Component {
               .then(response => response.json());
           });
           Promise.all(allResidents)
-            .then(residents => personPlaceOrThing.Residents = residents);
+            .then(residents => {
+              personPlaceOrThing.Residents = residents.map(resident => resident.name);
+              return personPlaceOrThing;
+            });
         }
         return personPlaceOrThing;
       })).then(finalData => this.updateState(finalData));
