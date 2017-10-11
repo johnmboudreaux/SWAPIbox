@@ -6,14 +6,24 @@ const Card = ( { cardData } ) => {
   delete rowInfoData.name;
   delete rowInfoData.type;
   delete rowInfoData.isFavorite;
+  let favText = 'OMG! Totes Fav!!!';
+  if (cardData.isFavorite) {
+    favText = 'Like watevs. Not my fav';
+  }
   const displayRows = Object.keys(rowInfoData).map( (rowName, index) => {
+    let arrayData = rowInfoData[rowName];
+    if (Array.isArray(rowInfoData[rowName])) {
+      arrayData = rowInfoData[rowName].map(personPlaceOrThing => {
+        return personPlaceOrThing;
+      });
+    }
     return (
       <tr key={`${cardData.name}-${index}`}>
         <td className='section'>
           {rowName}
         </td>
         <td>
-          {rowInfoData[rowName]}
+          {arrayData}
         </td>
       </tr>
     );
@@ -26,14 +36,13 @@ const Card = ( { cardData } ) => {
           {displayRows}
         </tbody>
       </table>
-      <h5>Add to Favorites</h5>
+      <h5>{favText}</h5>
     </div>
   );
 };
 
 Card.propTypes = {
-  compareInfo: PropTypes.objectOf(PropTypes.object),
-  removeCompare: PropTypes.func
+  cardData: PropTypes.arrayOf(PropTypes.object)
 };
 
 export default Card;
