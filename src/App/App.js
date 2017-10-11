@@ -85,29 +85,29 @@ class App extends Component {
       })
       .then(returnData => returnData.map(personPlaceOrThing => {
         if (type === 'people'){
-          fetch(personPlaceOrThing.homeworld)
+          fetch(personPlaceOrThing.Homeworld)
             .then(response => response.json())
             .then(world => {
-              personPlaceOrThing.homeworld = world.name;
-              personPlaceOrThing.population = world.population;
+              personPlaceOrThing.Homeworld = world.name;
+              personPlaceOrThing.Population = world.population;
               return personPlaceOrThing;
             })
             .then(personPlaceOrThing => {
-              fetch(personPlaceOrThing.species)
+              fetch(personPlaceOrThing.Species)
                 .then(response => response.json())
                 .then(species => {
-                  personPlaceOrThing.species = species.name;
+                  personPlaceOrThing.Species = species.name;
                   return personPlaceOrThing;
                 });
             });
         }
         if (type === 'planets') {
-          const allResidents = personPlaceOrThing.residents.map(residentAPI => {
+          const allResidents = personPlaceOrThing.Residents.map(residentAPI => {
             return fetch(residentAPI)
               .then(response => response.json());
           });
           Promise.all(allResidents)
-            .then(residents => personPlaceOrThing.residents = residents);
+            .then(residents => personPlaceOrThing.Residents = residents);
         }
         return personPlaceOrThing;
       })).then(finalData => this.updateState(finalData));
