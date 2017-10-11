@@ -7,7 +7,7 @@ class App extends Component {
   constructor() {
     super();
     this.state= {
-      people: {}
+      appArray: []
     };
   }
 
@@ -18,7 +18,9 @@ class App extends Component {
         name: vehicle.name,
         model: vehicle.model,
         vehicle_class: vehicle.vehicle_class,
-        passengers: vehicle.passengers
+        passengers: vehicle.passengers,
+        isFavorite: false,
+        type: 'vehicles'
       };
       return newVehicle;
     });
@@ -32,7 +34,9 @@ class App extends Component {
         name: person.name,
         homeworld: person.homeworld,
         species: '',
-        population: 0
+        population: 0,
+        isFavorite: false,
+        type: 'people'
       };
       return newPerson;
     });
@@ -47,15 +51,26 @@ class App extends Component {
         terrain: planet.terrain,
         poplulation: planet.population,
         climate: planet.climate,
-        residents: planet.residents
+        residents: planet.residents,
+        isFavorite: false,
+        type: 'planets'
       };
       return newPlanet;
     });
     return cleanArray;
   }
 
+  updateState(array) {
+    const oldState = this.state.appArray.slice();
+    const newState = [...oldState, ...array]
+    console.log('oldState: ', oldState)
+    console.log('array: ', array)
+    console.log('newState: ', newState)
+    this.setState({ appArray: newState})
+  }
+
   fetchList(type) {
-    return fetch(`https://swapi.co/api/${type}/`)
+    fetch(`https://swapi.co/api/${type}/`)
       .then(returnedData => returnedData.json())
       .then(group => {
         let newGroup = [];
@@ -83,18 +98,20 @@ class App extends Component {
               .then(response => response.json());
           });
           Promise.all(allResidents)
-            .then(residents => personPlaceOrThing.residents = residents);
+            .then(residents => personPlaceOrThing.residents = residents)            
         }
         return personPlaceOrThing;
-      }));
+      })).then(finalData => this.updateState(finalData));
+      
+      
   }
 
   componentDidMount() {
     // const helper = new Helper();
     // helper.getData('people')
-    this.fetchList('vehicles');
-    // this.fetchList('planets');
-    // this.fetchList('people');
+    const vehicles = this.fetchList('vehicles');
+    const planets = this.fetchList('planets');
+    const people = this.fetchList('people');
     // this.fetchList('planets')
 
     // this.fetchPeople();
