@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
+import CardContainer from '../CardContainer/CardContainer';
 import Helper from '../Helper';
 import { Route } from 'react-router';
 
@@ -127,10 +128,9 @@ class App extends Component {
         <Header />
         <Route exact path="/people"
           render={() =>
-            <Header />
+            <CardContainer />
           }
         />
-
       </div>
     );
   }

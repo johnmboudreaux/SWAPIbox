@@ -1,0 +1,30 @@
+$dark-grey: #172633;
+$light-grey: #211E27;
+
+$body-dark: #444755;
+$body-light: #6D6D74;
+$body-light2: #98989f;
+
+$highlight-dark: #C43B41;
+$background: #C8C7C5;
+
+$highlight: #F3A746;
+
+$shadow: 5px 5px 25px $body-dark;
+$glow: 0 0 15px $highlight-dark;
+
+@mixin radial-gradient($color2, $color1) {
+  background: $color1;
+  background: -moz-radial-gradient(center, ellipse cover, $color1 18%, $color2 100%);
+  background: -webkit-radial-gradient(center, ellipse cover, $color1 18%, $color2 100%);
+  background: radial-gradient(ellipse at center, $color1 18%, $color2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 );
+}
+
+@mixin linear-gradient($color2, $color1) {
+  background: $color1;
+  background: -moz-linear-gradient(top, $color1 0%, $color2 100%);
+  background: -webkit-linear-gradient(top, $color1 0%, $color2 100%);
+  background: linear-gradient(to bottom, $color1 0%, $color2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=0 );
+}

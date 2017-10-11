@@ -1,1 +1,33 @@
 @import "../variables.scss";
+
+.header {
+  @include linear-gradient($dark-grey, $light-grey);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 2px solid $highlight-dark;
+  img {
+    display: block;
+    width: 50vw;
+    padding: 5em;
+  }
+  nav {
+    padding-bottom: 2em;
+    font-weight: 300;
+    a {
+      text-decoration: none;
+      color: $body-light;
+      padding: .5em;
+      margin: .5em;
+      &:hover {
+        color: $highlight-dark;
+      }
+    }
+    .active {
+      font-weight: 900;
+      color: $highlight-dark;
+    }
+  }
+
+
+}

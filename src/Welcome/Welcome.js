@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ( { label } ) => {
+const Welcome = () => {
   return (
-    <span className='button'>{label}</span>
+    <div className='welcome'>
+      <h1>Welcome</h1>
+    </div>
   );
 };
 
-{/* Button.propTypes = {
+Welcome.propTypes = {
   compareInfo: PropTypes.objectOf(PropTypes.object),
   removeCompare: PropTypes.func
-}; */}
+};
 
-export default Button;
+export default Welcome;
