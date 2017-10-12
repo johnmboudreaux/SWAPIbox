@@ -4,23 +4,29 @@ import Card from '../Card/Card';
 import Button from '../Button/Button';
 
 
-const CardContainer = ({ cardData, toggleFavorite } ) => {
+const CardContainer = ({ cardData, toggleFavorite, handleLoadMore } ) => {
   const allCards = cardData.map( (cardDataObj, index) => {
-    return <Card key={index} cardData={cardDataObj} toggleFavorite={toggleFavorite}/>
+    return <Card
+      key={index}
+      cardData={cardDataObj}
+      toggleFavorite={toggleFavorite}
+    />
   })
+
   return (
     <div className='cardContainer'>
       {allCards}
-      <div className='prev-next'>
-        <Button label='Prev' />
-        <Button label='Next' />
+      <div className='load-more'>
+        <Button label='Load More' onClick={ handleLoadMore } />
       </div>
     </div>
   );
 };
 
 CardContainer.propTypes = {
-  cardData: PropTypes.arrayOf(PropTypes.object)
+  cardData: PropTypes.arrayOf(PropTypes.object),
+  handleLoadMore: PropTypes.func.isRequired,
+  toggleFavorite: PropTypes.func.isRequired
 };
 
 export default CardContainer;
