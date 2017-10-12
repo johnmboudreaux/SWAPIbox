@@ -14,8 +14,10 @@ const Card = ({ cardData, toggleFavorite } ) => {
   const displayRows = Object.keys(rowInfoData).map( (rowName, index) => {
     let arrayData = rowInfoData[rowName];
     if (Array.isArray(rowInfoData[rowName])) {
+      console.log('array if', rowInfoData[rowName])
       arrayData = rowInfoData[rowName].map(personPlaceOrThing => {
-        return personPlaceOrThing;
+        console.log('array if row', personPlaceOrThing)
+        return <p>{personPlaceOrThing}</p>;
       });
     }
     return (
