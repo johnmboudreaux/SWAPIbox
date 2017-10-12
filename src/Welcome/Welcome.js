@@ -2,10 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Welcome = ({ movie }) => {
-  console.log(movie)
-    // <div className='welcome'>
-    //   <h1>Welcome</h1>
-    // </div>
 
   const romanArray = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII']
   
