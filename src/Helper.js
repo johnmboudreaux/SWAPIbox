@@ -1,3 +1,18 @@
+const fetchMovieScroll = () => {
+  return fetch('https://swapi.co/api/films/')
+    .then(returnedData => returnedData.json())
+    .then(moviesData => moviesData.results.map(movie => {
+      const newMovieObj = {
+        title: movie.title,
+        releaseDate: movie.release_date,
+        openingCrawl: movie.opening_crawl,
+        EpisodeId: movie.episode_id
+      }
+      return newMovieObj;
+    }))
+}
+
+
 const fetchList = (type) => {
   return fetch(`https://swapi.co/api/${type}/`)
     .then(returnedData => returnedData.json())
@@ -108,5 +123,6 @@ module.exports = {
   fetchList,
   cleanVehiclesData,
   cleanPeopleData,
-  cleanPlanetsData
+  cleanPlanetsData,
+  fetchMovieScroll
 };
