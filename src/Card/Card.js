@@ -7,9 +7,9 @@ const Card = ({ cardData, toggleFavorite } ) => {
   delete rowInfoData.type;
   delete rowInfoData.isFavorite;
   delete rowInfoData.id;
-  let favText = 'OMG! Totes Fav!!!';
+  let favText = 'Add Fav';
   if (cardData.isFavorite) {
-    favText = 'Like watevs. Not my fav';
+    favText = 'Remove Fav';
   }
   const displayRows = Object.keys(rowInfoData).map( (rowName, index) => {
     let arrayData = rowInfoData[rowName];
