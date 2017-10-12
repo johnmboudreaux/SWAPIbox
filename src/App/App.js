@@ -13,13 +13,26 @@ class App extends Component {
       appArray: []
     };
     this.getDataForRoute = this.getDataForRoute.bind(this);
+    this.toggleFavorite = this.toggleFavorite.bind(this);
+  }
+
+  toggleFavorite(id) {
+    const oldState = [...this.state.appArray];
+    const newState = oldState.map(item => {
+      if (item.id === id) {
+        console.log('match!')
+        item.isFavorite = !item.isFavorite
+      }
+      return item
+    })
+    this.setState({appArray: newState})
   }
 
   updateState() {
     const daStuffs = [
-      fetchList('vehicles'),
+      fetchList('people'),
       fetchList('planets'),
-      fetchList('people')
+      fetchList('vehicles')
     ];
     Promise.all(daStuffs)
       .then(everything => {
@@ -45,29 +58,39 @@ class App extends Component {
 
   render() {
     return (
+      
+        
       <div className="App">
         <Header />
+
         <Route exact path="/"
           render={() =>
             <Welcome scroll='' />
           }
         />
+        {
+          this.state.appArray[0] &&
         <Route exact path="/people"
           render={() =>
-            <CardContainer cardData={this.getDataForRoute('people')}/>
+            <CardContainer cardData={this.getDataForRoute('people')} toggleFavorite={this.toggleFavorite}/>
           }
         />
+        }
+        
         <Route exact path="/planets"
           render={() =>
-            <CardContainer cardData={this.getDataForRoute('planets')}/>
+            <CardContainer cardData={this.getDataForRoute('planets')} toggleFavorite={this.toggleFavorite}/>
           }
         />
         <Route exact path="/vehicles"
           render={() =>
-            <CardContainer cardData={this.getDataForRoute('vehicles')}/>
+            <CardContainer cardData={this.getDataForRoute('vehicles')} toggleFavorite={this.toggleFavorite}/>
           }
         />
+        
       </div>
+      
+      
     );
   }
 }

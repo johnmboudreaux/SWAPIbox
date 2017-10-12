@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Card = ( { cardData } ) => {
+const Card = ({ cardData, toggleFavorite } ) => {
   const rowInfoData = {...cardData};
   delete rowInfoData.name;
   delete rowInfoData.type;
   delete rowInfoData.isFavorite;
+  delete rowInfoData.id;
   let favText = 'OMG! Totes Fav!!!';
   if (cardData.isFavorite) {
     favText = 'Like watevs. Not my fav';
@@ -28,21 +29,26 @@ const Card = ( { cardData } ) => {
       </tr>
     );
   });
+  
+  const cardStyle = cardData.isFavorite ? 'selected-card card' : 'card';
+
   return (
-    <div className='card'>
+    <div className={cardStyle}>
       <h2>{cardData.name}</h2>
       <table>
         <tbody>
           {displayRows}
         </tbody>
       </table>
-      <h5>{favText}</h5>
+      <h5 onClick={()=>{
+        toggleFavorite(cardData.id)
+        }}>{favText}</h5>
     </div>
   );
 };
 
 Card.propTypes = {
-  cardData: PropTypes.arrayOf(PropTypes.object)
+  cardData: PropTypes.object
 };
 
 export default Card;

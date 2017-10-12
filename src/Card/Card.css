@@ -44,3 +44,8 @@
     .card h5:hover {
       color: #C43B41;
       cursor: pointer; }
+
+
+    .selected-card {
+      background: #C43B41;
+    }

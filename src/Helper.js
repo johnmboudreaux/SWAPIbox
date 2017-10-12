@@ -51,14 +51,15 @@ const fetchList = (type) => {
 
 const cleanVehiclesData = (arrayOfVehicles) => {
   const rawArray = arrayOfVehicles.results;
-  const cleanArray = rawArray.map(vehicle => {
+  const cleanArray = rawArray.map((vehicle, i) => {
     const newVehicle = {
       name: vehicle.name,
       'Model': vehicle.model,
       'Vehicle Class': vehicle.vehicle_class,
       'Passengers': vehicle.passengers,
       isFavorite: false,
-      type: 'vehicles'
+      type: 'vehicles',
+      id: performance.now() + i
     };
     return newVehicle;
   });
@@ -67,14 +68,15 @@ const cleanVehiclesData = (arrayOfVehicles) => {
 
 const cleanPeopleData = (arrayOfPeople) => {
   const rawArray = arrayOfPeople.results;
-  const cleanArray = rawArray.map(person => {
+  const cleanArray = rawArray.map((person, i )=> {
     const newPerson = {
       name: person.name,
       'Homeworld': person.homeworld,
       'Species': person.species[0],
       'Population': 0,
       isFavorite: false,
-      type: 'people'
+      type: 'people',
+      id: performance.now() + i
     };
     return newPerson;
   });
@@ -83,7 +85,7 @@ const cleanPeopleData = (arrayOfPeople) => {
 
 const cleanPlanetsData = (arrayOfPlanets) => {
   const rawArray = arrayOfPlanets.results;
-  const cleanArray = rawArray.map((planet) => {
+  const cleanArray = rawArray.map((planet, i) => {
     const newPlanet = {
       name: planet.name,
       'Terrain': planet.terrain,
@@ -91,7 +93,8 @@ const cleanPlanetsData = (arrayOfPlanets) => {
       'Climate': planet.climate,
       'Residents': planet.residents,
       isFavorite: false,
-      type: 'planets'
+      type: 'planets',
+      id: performance.now() + i
     };
     return newPlanet;
   });
