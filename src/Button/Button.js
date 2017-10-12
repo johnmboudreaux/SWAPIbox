@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ( { label } ) => {
+const Button = ( { label, onClick } ) => {
   return (
-    <span className='button'>{label}</span>
+    <span className='button' onClick={onClick}>{label}</span>
   );
 };
 
