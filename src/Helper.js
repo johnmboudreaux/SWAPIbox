@@ -76,7 +76,7 @@ const cleanVehiclesData = (arrayOfVehicles) => {
       'Passengers': vehicle.passengers,
       isFavorite: false,
       type: 'vehicles',
-      id: performance.now() + i
+      id: Date.now() + i
     };
     return newVehicle;
   });
@@ -93,7 +93,7 @@ const cleanPeopleData = (arrayOfPeople) => {
       'Population': 0,
       isFavorite: false,
       type: 'people',
-      id: performance.now() + i
+      id: Date.now() + i
     };
     return newPerson;
   });
@@ -111,7 +111,7 @@ const cleanPlanetsData = (arrayOfPlanets) => {
       'Residents': planet.residents,
       isFavorite: false,
       type: 'planets',
-      id: performance.now() + i
+      id: Date.now() + i
     };
     return newPlanet;
   });
