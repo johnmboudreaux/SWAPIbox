@@ -64,12 +64,16 @@ class App extends Component {
     });
   }
 
+  getFavorites() {
+    return this.state.appArray.filter( personPlaceOrThing => {
+      return personPlaceOrThing.isFavorite;
+    });
+  }
+
   render() {
     return (
-
-
       <div className="App">
-        <Header />
+        <Header favCount={this.getFavorites().length}/>
 
         <Route exact path="/"
           render={() =>
@@ -98,7 +102,11 @@ class App extends Component {
               handleLoadMore={this.handleLoadMore} cardData={this.getDataForRoute('vehicles')} toggleFavorite={this.toggleFavorite}/>
           }
         />
-
+        <Route exact path="/favorites"
+          render={() =>
+            <CardContainer cardData={this.getFavorites()} toggleFavorite={this.toggleFavorite}/>
+          }
+        />
       </div>
 
 
