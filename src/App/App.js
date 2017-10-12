@@ -88,7 +88,6 @@ class App extends Component {
       <div className="App">
         <Header favCount={this.getFavorites().length}/>
 
-
         {
           this.state.movieArray.length &&
         <Route exact path="/"

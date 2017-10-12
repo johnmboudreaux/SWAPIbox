@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 const Card = ({ cardData, toggleFavorite } ) => {
   const rowInfoData = {...cardData};
-  const space = " ";
   delete rowInfoData.name;
   delete rowInfoData.type;
   delete rowInfoData.isFavorite;
