@@ -1,19 +1,7 @@
 const fetchList = (type) => {
   return fetch(`https://swapi.co/api/${type}/`)
     .then(returnedData => returnedData.json())
-    .then(group => {
-      let newGroup = [];
-      if (type === 'people') {
-        newGroup = cleanPeopleData(group);
-      }
-      if (type === 'planets') {
-        newGroup = cleanPlanetsData(group);
-      }
-      if (type === 'vehicles') {
-        newGroup = cleanVehiclesData(group);
-      }
-      return newGroup;
-    })
+    .then(group => setType(group, type))
     .then(returnData => returnData.map(personPlaceOrThing => {
       if (type === 'people'){
         fetch(personPlaceOrThing.Homeworld)
@@ -48,6 +36,20 @@ const fetchList = (type) => {
       return personPlaceOrThing;
     }));
 };
+
+const setType = (group, type) => {
+  let newGroup = [];
+  if (type === 'people') {
+    newGroup = cleanPeopleData(group);
+  }
+  if (type === 'planets') {
+    newGroup = cleanPlanetsData(group);
+  }
+  if (type === 'vehicles') {
+    newGroup = cleanVehiclesData(group);
+  }
+  return newGroup;
+}
 
 const cleanVehiclesData = (arrayOfVehicles) => {
   const rawArray = arrayOfVehicles.results;
