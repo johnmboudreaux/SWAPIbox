@@ -1,8 +1,7 @@
 .cardContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; }
-  .cardContainer .prev-next {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; }
+  .cardContainer .load-more {
     display: flex;
     justify-content: center;
     width: 100%; }
