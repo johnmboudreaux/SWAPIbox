@@ -1,0 +1,724 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`card should render correctly and match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Card
+    cardData={
+        Object {
+            "Homeworld": "Tatooine",
+            "Population": "200000",
+            "Species": "Human",
+            "id": 1507831320587,
+            "isFavorite": false,
+            "name": "Luke Skywalker",
+            "type": "people",
+          }
+    }
+    toggleFavorite={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": null,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2>
+          Luke Skywalker
+</h2>,
+        <div
+          className="table-container"
+>
+          <table>
+                    <tbody>
+                              <tr>
+                                        <td
+                                                  className="section"
+                                        >
+                                                  Homeworld
+                                        </td>
+                                        <td>
+                                                  Tatooine
+                                        </td>
+                              </tr>
+                              <tr>
+                                        <td
+                                                  className="section"
+                                        >
+                                                  Population
+                                        </td>
+                                        <td>
+                                                  200000
+                                        </td>
+                              </tr>
+                              <tr>
+                                        <td
+                                                  className="section"
+                                        >
+                                                  Species
+                                        </td>
+                                        <td>
+                                                  Human
+                                        </td>
+                              </tr>
+                    </tbody>
+          </table>
+</div>,
+        <h5
+          onClick={[Function]}
+>
+          OMG! Totes Fav!!!
+</h5>,
+      ],
+      "className": "card",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Luke Skywalker",
+        },
+        "ref": null,
+        "rendered": "Luke Skywalker",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": <table>
+            <tbody>
+                        <tr>
+                                    <td
+                                                className="section"
+                                    >
+                                                Homeworld
+                                    </td>
+                                    <td>
+                                                Tatooine
+                                    </td>
+                        </tr>
+                        <tr>
+                                    <td
+                                                className="section"
+                                    >
+                                                Population
+                                    </td>
+                                    <td>
+                                                200000
+                                    </td>
+                        </tr>
+                        <tr>
+                                    <td
+                                                className="section"
+                                    >
+                                                Species
+                                    </td>
+                                    <td>
+                                                Human
+                                    </td>
+                        </tr>
+            </tbody>
+</table>,
+          "className": "table-container",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": <tbody>
+              <tr>
+                            <td
+                                          className="section"
+                            >
+                                          Homeworld
+                            </td>
+                            <td>
+                                          Tatooine
+                            </td>
+              </tr>
+              <tr>
+                            <td
+                                          className="section"
+                            >
+                                          Population
+                            </td>
+                            <td>
+                                          200000
+                            </td>
+              </tr>
+              <tr>
+                            <td
+                                          className="section"
+                            >
+                                          Species
+                            </td>
+                            <td>
+                                          Human
+                            </td>
+              </tr>
+</tbody>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <tr>
+                  <td
+                                    className="section"
+                  >
+                                    Homeworld
+                  </td>
+                  <td>
+                                    Tatooine
+                  </td>
+</tr>,
+                <tr>
+                  <td
+                                    className="section"
+                  >
+                                    Population
+                  </td>
+                  <td>
+                                    200000
+                  </td>
+</tr>,
+                <tr>
+                  <td
+                                    className="section"
+                  >
+                                    Species
+                  </td>
+                  <td>
+                                    Human
+                  </td>
+</tr>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": "Luke Skywalker-0",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <td
+                      className="section"
+>
+                      Homeworld
+</td>,
+                    <td>
+                      Tatooine
+</td>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Homeworld",
+                      "className": "section",
+                    },
+                    "ref": null,
+                    "rendered": "Homeworld",
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Tatooine",
+                    },
+                    "ref": null,
+                    "rendered": "Tatooine",
+                    "type": "td",
+                  },
+                ],
+                "type": "tr",
+              },
+              Object {
+                "instance": null,
+                "key": "Luke Skywalker-1",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <td
+                      className="section"
+>
+                      Population
+</td>,
+                    <td>
+                      200000
+</td>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Population",
+                      "className": "section",
+                    },
+                    "ref": null,
+                    "rendered": "Population",
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "200000",
+                    },
+                    "ref": null,
+                    "rendered": "200000",
+                    "type": "td",
+                  },
+                ],
+                "type": "tr",
+              },
+              Object {
+                "instance": null,
+                "key": "Luke Skywalker-2",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <td
+                      className="section"
+>
+                      Species
+</td>,
+                    <td>
+                      Human
+</td>,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Species",
+                      "className": "section",
+                    },
+                    "ref": null,
+                    "rendered": "Species",
+                    "type": "td",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "Human",
+                    },
+                    "ref": null,
+                    "rendered": "Human",
+                    "type": "td",
+                  },
+                ],
+                "type": "tr",
+              },
+            ],
+            "type": "tbody",
+          },
+          "type": "table",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "OMG! Totes Fav!!!",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "OMG! Totes Fav!!!",
+        "type": "h5",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": null,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2>
+            Luke Skywalker
+</h2>,
+          <div
+            className="table-container"
+>
+            <table>
+                        <tbody>
+                                    <tr>
+                                                <td
+                                                            className="section"
+                                                >
+                                                            Homeworld
+                                                </td>
+                                                <td>
+                                                            Tatooine
+                                                </td>
+                                    </tr>
+                                    <tr>
+                                                <td
+                                                            className="section"
+                                                >
+                                                            Population
+                                                </td>
+                                                <td>
+                                                            200000
+                                                </td>
+                                    </tr>
+                                    <tr>
+                                                <td
+                                                            className="section"
+                                                >
+                                                            Species
+                                                </td>
+                                                <td>
+                                                            Human
+                                                </td>
+                                    </tr>
+                        </tbody>
+            </table>
+</div>,
+          <h5
+            onClick={[Function]}
+>
+            OMG! Totes Fav!!!
+</h5>,
+        ],
+        "className": "card",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Luke Skywalker",
+          },
+          "ref": null,
+          "rendered": "Luke Skywalker",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": <table>
+              <tbody>
+                            <tr>
+                                          <td
+                                                        className="section"
+                                          >
+                                                        Homeworld
+                                          </td>
+                                          <td>
+                                                        Tatooine
+                                          </td>
+                            </tr>
+                            <tr>
+                                          <td
+                                                        className="section"
+                                          >
+                                                        Population
+                                          </td>
+                                          <td>
+                                                        200000
+                                          </td>
+                            </tr>
+                            <tr>
+                                          <td
+                                                        className="section"
+                                          >
+                                                        Species
+                                          </td>
+                                          <td>
+                                                        Human
+                                          </td>
+                            </tr>
+              </tbody>
+</table>,
+            "className": "table-container",
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": <tbody>
+                <tr>
+                                <td
+                                                className="section"
+                                >
+                                                Homeworld
+                                </td>
+                                <td>
+                                                Tatooine
+                                </td>
+                </tr>
+                <tr>
+                                <td
+                                                className="section"
+                                >
+                                                Population
+                                </td>
+                                <td>
+                                                200000
+                                </td>
+                </tr>
+                <tr>
+                                <td
+                                                className="section"
+                                >
+                                                Species
+                                </td>
+                                <td>
+                                                Human
+                                </td>
+                </tr>
+</tbody>,
+            },
+            "ref": null,
+            "rendered": Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <tr>
+                    <td
+                                        className="section"
+                    >
+                                        Homeworld
+                    </td>
+                    <td>
+                                        Tatooine
+                    </td>
+</tr>,
+                  <tr>
+                    <td
+                                        className="section"
+                    >
+                                        Population
+                    </td>
+                    <td>
+                                        200000
+                    </td>
+</tr>,
+                  <tr>
+                    <td
+                                        className="section"
+                    >
+                                        Species
+                    </td>
+                    <td>
+                                        Human
+                    </td>
+</tr>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": "Luke Skywalker-0",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <td
+                        className="section"
+>
+                        Homeworld
+</td>,
+                      <td>
+                        Tatooine
+</td>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Homeworld",
+                        "className": "section",
+                      },
+                      "ref": null,
+                      "rendered": "Homeworld",
+                      "type": "td",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Tatooine",
+                      },
+                      "ref": null,
+                      "rendered": "Tatooine",
+                      "type": "td",
+                    },
+                  ],
+                  "type": "tr",
+                },
+                Object {
+                  "instance": null,
+                  "key": "Luke Skywalker-1",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <td
+                        className="section"
+>
+                        Population
+</td>,
+                      <td>
+                        200000
+</td>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Population",
+                        "className": "section",
+                      },
+                      "ref": null,
+                      "rendered": "Population",
+                      "type": "td",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "200000",
+                      },
+                      "ref": null,
+                      "rendered": "200000",
+                      "type": "td",
+                    },
+                  ],
+                  "type": "tr",
+                },
+                Object {
+                  "instance": null,
+                  "key": "Luke Skywalker-2",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <td
+                        className="section"
+>
+                        Species
+</td>,
+                      <td>
+                        Human
+</td>,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Species",
+                        "className": "section",
+                      },
+                      "ref": null,
+                      "rendered": "Species",
+                      "type": "td",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": "Human",
+                      },
+                      "ref": null,
+                      "rendered": "Human",
+                      "type": "td",
+                    },
+                  ],
+                  "type": "tr",
+                },
+              ],
+              "type": "tbody",
+            },
+            "type": "table",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "OMG! Totes Fav!!!",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "OMG! Totes Fav!!!",
+          "type": "h5",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

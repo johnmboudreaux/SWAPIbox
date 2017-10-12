@@ -71,6 +71,17 @@ const mockPlanet = {
   "name": "Tatooine"
 };
 
+const mockCardDataObj = {
+ Homeworld:  "Tatooine",
+ Population: "200000",
+ Species:"Human",
+ id: 1507831320587,
+ isFavorite: false,
+ name: "Luke Skywalker",
+ type: "people"
+}
+
+
 module.exports = {
   mockFilms,
   mockPeople,
@@ -78,5 +89,6 @@ module.exports = {
   mockPlanets,
   mockPlanet,
   mockVehicles,
-  mockSpecies
+  mockSpecies,
+  mockCardDataObj
 };
