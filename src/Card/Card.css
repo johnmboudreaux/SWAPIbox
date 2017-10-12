@@ -57,3 +57,6 @@
     margin: 0;
     padding: 0;
     display: inline-block; }
+
+.selected-card {
+  background: #C23D44; }
