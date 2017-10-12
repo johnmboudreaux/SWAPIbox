@@ -4,9 +4,9 @@ import Card from '../Card/Card';
 import Button from '../Button/Button';
 
 
-const CardContainer = ( { cardData } ) => {
+const CardContainer = ({ cardData, toggleFavorite } ) => {
   const allCards = cardData.map( (cardDataObj, index) => {
-    return <Card key={index} cardData={cardDataObj} />
+    return <Card key={index} cardData={cardDataObj} toggleFavorite={toggleFavorite}/>
   })
   return (
     <div className='cardContainer'>
