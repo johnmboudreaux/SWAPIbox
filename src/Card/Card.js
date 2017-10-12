@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 const Card = ({ cardData, toggleFavorite } ) => {
   const rowInfoData = {...cardData};
+  const space = " ";
   delete rowInfoData.name;
   delete rowInfoData.type;
   delete rowInfoData.isFavorite;
@@ -14,10 +15,8 @@ const Card = ({ cardData, toggleFavorite } ) => {
   const displayRows = Object.keys(rowInfoData).map( (rowName, index) => {
     let arrayData = rowInfoData[rowName];
     if (Array.isArray(rowInfoData[rowName])) {
-      console.log('array if', rowInfoData[rowName])
       arrayData = rowInfoData[rowName].map(personPlaceOrThing => {
-        console.log('array if row', personPlaceOrThing)
-        return <p>{personPlaceOrThing}</p>;
+        return <p>{personPlaceOrThing}, </p>;
       });
     }
     return (
@@ -37,11 +36,13 @@ const Card = ({ cardData, toggleFavorite } ) => {
   return (
     <div className={cardStyle}>
       <h2>{cardData.name}</h2>
-      <table>
-        <tbody>
-          {displayRows}
-        </tbody>
-      </table>
+      <div className='table-container'>
+        <table>
+          <tbody>
+            {displayRows}
+          </tbody>
+        </table>
+      </div>
       <h5 onClick={()=>{
         toggleFavorite(cardData.id)
         }}>{favText}</h5>
