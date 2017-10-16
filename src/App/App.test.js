@@ -1,7 +1,4 @@
-import React from 'react';
-import { shallow, mount } from 'enzyme';
 import fetchMock from 'fetch-mock';
-import App from './App';
 import {
   mockFilms,
   mockPeople,
@@ -46,7 +43,6 @@ describe('User intergration test', () => {
     });
   });
   afterEach(() => {
-    console.log(fetchMock.calls());
     expect(fetchMock.calls().unmatched).toEqual([]);
     fetchMock.restore();
   });
