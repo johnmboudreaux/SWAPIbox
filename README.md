@@ -4,13 +4,14 @@
 
 This project is a mildly interesting Star Wars data fetching app. It grabs data for different people, places and things and dislpays it on the DOM.
 
-## Tools Used:
+## Languages Used:
 
 JavaScript
+
 React
+
 React-Router
 
--------------------------------
 
 ## Contributors:
 
@@ -20,7 +21,6 @@ Alex Banister
 
 Nick Born
 
----------------------------------
 ## Specifications
 
 ### Iteration 0: Landing Page
