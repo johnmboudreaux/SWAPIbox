@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const Welcome = ({ movie }) => {
 
-  const romanArray = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII']
-  
+  const romanArray = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
+
   return (
     <div className='welcome-body'>
       <div className="fade"></div>
@@ -28,7 +28,8 @@ const Welcome = ({ movie }) => {
 
 Welcome.propTypes = {
   compareInfo: PropTypes.objectOf(PropTypes.object),
-  removeCompare: PropTypes.func
+  removeCompare: PropTypes.func,
+  movie: PropTypes.object
 };
 
 export default Welcome;
