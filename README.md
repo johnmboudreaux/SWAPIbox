@@ -1,6 +1,7 @@
 # Swapi Box
 
-![swapibox](https://user-images.githubusercontent.com/20631355/31920768-4a43e19e-b828-11e7-8ba8-52816deca101.gif)
+![swapi2](https://user-images.githubusercontent.com/20631355/31922516-99d8adca-b832-11e7-8aa9-867cc3da887a.gif)
+
 
 This project is a mildly interesting Star Wars data fetching app. It grabs data for different people, places and things and dislpays it on the DOM.
 
