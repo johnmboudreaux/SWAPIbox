@@ -8,7 +8,8 @@
   margin: 1em;
   border: 1px solid #C43B41;
   box-shadow: 5px 5px 25px #444755;
-  color: #C8C7C5; }
+  color: #C8C7C5;
+  height: 20px; }
   .button:hover {
     color: #C43B41;
     cursor: pointer;

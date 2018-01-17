@@ -39,17 +39,18 @@ class App extends Component {
   }
 
   updateState() {
-    const daStuffs = [
+    const promiseArray = [
       fetchList('people'),
       fetchList('planets'),
       fetchList('vehicles')
     ];
-    Promise.all(daStuffs)
-      .then(everything => {
-        const newEverything = everything.reduce( (accum, aThingOfThings) => {
-          return [...accum, ...aThingOfThings];
+    Promise.all(promiseArray)
+      .then(personPlaceOrThing => {
+        console.log(personPlaceOrThing);
+        const newpersonPlaceOrThing = personPlaceOrThing.reduce( (accum, item) => {
+          return [...accum, ...item];
         }, []);
-        const newState = [...this.state.appArray, ...newEverything];
+        const newState = [...this.state.appArray, ...newpersonPlaceOrThing];
         this.setState({
           appArray: newState
         });
@@ -127,7 +128,8 @@ class App extends Component {
           render={() =>
             <CardContainer
               cardData={this.getFavorites()}
-              toggleFavorite={this.toggleFavorite}/>
+              toggleFavorite={this.toggleFavorite}
+            />
           }
         />
       </div>
